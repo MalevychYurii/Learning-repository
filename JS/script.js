@@ -1,26 +1,20 @@
-"use strict";
+'use strict';
+const numberOfFilms = +prompt("Скільки фільмів ви вже переглянули?", "");
 
-console.log("arr" + " - object");   
-console.log(4 + " - object");
-console.log(4 + +"5");
+let personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    private: false
+};
 
-let incr = 10,
-    decr = 10;
+const a = prompt("Один з останніх переглянутих фільмів?", ""),
+      b = prompt("На скільки оціните його?", ""),
+      c = prompt("Один з останніх переглянутих фільмів?", ""),
+      d = prompt("На скільки оціните його?", "");
 
-console.log(incr++)
-console.log(decr--);
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-console.log((2*4) === +("8"));
-
-const isChecked = true,
-      isClose = false;
-
-console.log(isChecked && !isClose);
-
-const arr = [1, 2, 3, 4, 5];
-
-arr.forEach((item => {
-    if (item % 2 !== 0) {
-        console.log(`odd number: ${item}`);
-    }    
-}));
+console.log(personalMovieDB);
