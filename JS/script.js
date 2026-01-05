@@ -1,20 +1,20 @@
-'use strict';
-const numberOfFilms = +prompt("Скільки фільмів ви вже переглянули?", "");
+"use strict";
 
-let personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    private: false
-};
+const hamburger = 3;
+const fries = 3;
+const cola = 0;
+const nuggets = 2;
 
-const a = prompt("Один з останніх переглянутих фільмів?", ""),
-      b = prompt("На скільки оціните його?", ""),
-      c = prompt("Один з останніх переглянутих фільмів?", ""),
-      d = prompt("На скільки оціните його?", "");
+if (hamburger === 3 && cola == 2 || fries === 3 && nuggets) {
+    console.log("We would like to order!");
+} else {
+    console.log("We will not order!");
+}
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+console.log(!0);
 
-console.log(personalMovieDB);
+// let johnReport, alexReport, samReport, mariaReport = "done";
+
+// if (johnReport || alexReport || samReport || mariaReport) {
+//     console.log("We can start the project!");
+// }
