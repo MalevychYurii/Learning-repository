@@ -1,22 +1,23 @@
-console.log( NaN || 2 || undefined );
+'use strict';
 
+// function greet(name) {
+//     console.log(`Hello, ${name}!`)
+// }
 
-console.log( NaN && 2 && undefined );
+// greet('Yurii');
 
+function calc(a, b, operation) {
+    let result;
+    
+    if (operation == '-') {
+        result = a - b
+    } else if (operation == '+') {
+        result = a + b
+    } else if (operation == '*') {
+        result = a * b
+    } else if (operation == '/') {
+        result = a / b
+    }
+}
 
-console.log( 1 && 2 && 3 );
-
-
-console.log( !1 && 2 || !3 );
-
-
-console.log( 25 || null && !3 );
-
-
-console.log( NaN || null || !3 || undefined || 5);
-
-
-console.log( NaN || null && !3 && undefined || 5);
-
-
-console.log( 5 === 5 && 3 > 1 || 5);
+calc(4, 5, `+`);
