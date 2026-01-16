@@ -1,17 +1,30 @@
 'use strict';
-const usdCurr = 43.5;
-const discount = 0.9;
 
-function convert (amount, curr) {
-    return curr * amount
-}
+const str = "Hello!";
 
-const calc = (a, b) => { console.log((a+b)) };
+console.log(str.length); // property
 
-calc(2,5);
+const arr = [1, 2, 3];
 
-function promotion(result) {
-    console.log(result * discount)
-}
+console.log(arr.length);
 
-promotion(convert(650, usdCurr) * discount);
+console.log(str.toUpperCase()); // method
+
+const fruit = "Some fruit";
+
+console.log(fruit.indexOf("fruit"));
+
+const logg = "Hello world!";
+
+console.log(logg.slice(0, 5));
+console.log(logg.substring(6));
+
+const num = 5.5;
+
+console.log(Math.round(num));
+
+const test = "12.2px";
+
+test1 = parseInt(test);
+
+console.log(test1.round())
