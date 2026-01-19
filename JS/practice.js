@@ -23,7 +23,7 @@ let personalMovieDB = {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        let filmQuestion = prompt("Один з останніх переглянутих фільмів?", "");
+        let filmQuestion = prompt("Один з останніх переглянутих фільмів?", "").trim();
         let rateQuestion = prompt("На скільки оціните його?", "");
 
         if (filmQuestion == null || filmQuestion == '' || filmQuestion.length > 50 || rateQuestion == null || rateQuestion == '') {
