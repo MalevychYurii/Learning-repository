@@ -1,30 +1,42 @@
 'use strict';
 
-const str = "Hello!";
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log('test');
+    }
+};
 
-console.log(str.length); // property
+const {border, bg} = options.colors;
+console.log(border)
 
-const arr = [1, 2, 3];
+console.log(options.colors.bg);
 
-console.log(arr.length);
+delete options.name;
 
-console.log(str.toUpperCase()); // method
+console.log(options);
 
-const fruit = "Some fruit";
+let counter = 0;
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`${i}: ${options[key][i]}`);
+            counter++;
+        }
+    } else {
+        console.log(`${key}: ${options[key]}`);
+        counter++;
+    }
+};
 
-console.log(fruit.indexOf("fruit"));
+console.log(counter);
 
-const logg = "Hello world!";
+options.makeTest();
 
-console.log(logg.slice(0, 5));
-console.log(logg.substring(6));
-
-const num = 5.5;
-
-console.log(Math.round(num));
-
-const test = "12.2px";
-
-console.log(parseInt(test));
-
-console.log(parseFloat(test))
+console.log(Object.keys(options).length)

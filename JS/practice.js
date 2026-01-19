@@ -24,7 +24,7 @@ let personalMovieDB = {
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
         let filmQuestion = prompt("Один з останніх переглянутих фільмів?", "").trim();
-        let rateQuestion = prompt("На скільки оціните його?", "");
+        let rateQuestion = prompt("На скільки оціните його?", "").trim();
 
         if (filmQuestion == null || filmQuestion == '' || filmQuestion.length > 50 || rateQuestion == null || rateQuestion == '') {
             console.log("Некоректні дані"); 
