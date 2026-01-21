@@ -1,42 +1,39 @@
 'use strict';
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {
-        console.log('test');
-    }
-};
+const arr = [1, 2, 3, 8, 5];
 
-const {border, bg} = options.colors;
-console.log(border)
+arr.pop(); // delete last element
 
-console.log(options.colors.bg);
+arr.push(12); // add a new element to the end of an array
 
-delete options.name;
+console.log(arr);
 
-console.log(options);
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i])
+// }
 
-let counter = 0;
-for (let key in options) {
-    if (typeof(options[key]) === 'object') {
-        for (let i in options[key]) {
-            console.log(`${i}: ${options[key][i]}`);
-            counter++;
-        }
-    } else {
-        console.log(`${key}: ${options[key]}`);
-        counter++;
-    }
-};
+// for (let value of arr) {
+//     console.log(value)
+// }
 
-console.log(counter);
+arr.forEach((item, i, arr) => {
+    (item % 2 === 0) ? console.log(`on ${i} position we have ${item}`) : console.log('It is odd num')
+});
 
-options.makeTest();
+const arrEvenNumbers = arr.filter((num) => {
+    return num % 2 === 0;
+});
 
-console.log(Object.keys(options).length)
+console.log(arrEvenNumbers);
+
+// const str = prompt(``, ``);
+// const products = str.split(`,`);
+// console.log(products);
+
+const names = [`Yurii`, `Oleg`, 'Ivan'];
+console.log(names.join(`; `), `-`, typeof(names.join(`; `)));
+
+arr.sort((a, b) => {
+    return a - b;
+});
+console.log(arr)
