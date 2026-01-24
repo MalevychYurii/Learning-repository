@@ -1,17 +1,16 @@
-function counter() {
-    let num = 0;
-    
-    function counterPlus() {
-        num++;
-        console.log(num);
-    }
-    
-    counterPlus(); // Викликаємо функцію
-    return num;    // Повертаємо оновлене значення
+'use strict';
+
+function test() {
+    let arr = [1,2,3,4,5,6,7,8,9,10];
+    let arr2 = [];
+
+    arr.forEach((num) => {
+        if (num % 2 === 0) {
+            arr2.push(num);
+        }
+    });
+
+    return arr2;
 }
 
-const finalNum = counter(); // Виведе 1
-console.log(finalNum); // 1
-console.log(finalNum);
-console.log(finalNum);
-console.log(finalNum);
+console.log(test());
