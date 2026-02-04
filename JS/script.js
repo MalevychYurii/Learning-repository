@@ -1,39 +1,85 @@
-'use strict';
+"use strict";
 
-const arr = [1, 2, 3, 8, 5];
+let a = 5, b = a;
 
-arr.pop(); // delete last element
+b = b + 5
 
-arr.push(12); // add a new element to the end of an array
+// console.log(b);
+// console.log(a);
 
-console.log(arr);
+const obj = {
+    a: 5,
+    b: 1
+};
 
-// for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i])
-// }
+// const copy = obj;
 
-// for (let value of arr) {
-//     console.log(value)
-// }
+// copy.a = 10;
 
-arr.forEach((item, i, arr) => {
-    (item % 2 === 0) ? console.log(`on ${i} position we have ${item}`) : console.log('It is odd num')
-});
+// console.log(copy);
+// console.log(obj);
 
-const arrEvenNumbers = arr.filter((num) => {
-    return num % 2 === 0;
-});
+function copy(mainObj) {
+    let objCopy = {};
 
-console.log(arrEvenNumbers);
+    let key;
 
-// const str = prompt(``, ``);
-// const products = str.split(`,`);
-// console.log(products);
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
 
-const names = [`Yurii`, `Oleg`, 'Ivan'];
-console.log(names.join(`; `), `-`, typeof(names.join(`; `)));
+    return objCopy;
+}
 
-arr.sort((a, b) => {
-    return a - b;
-});
-console.log(arr)
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+
+const newObj = copy(numbers);
+
+newObj.a = 10;
+newObj.c.x = 12
+
+console.log(newObj);
+console.log(numbers);
+
+const add = {
+    d: 17,
+    e: 20
+};
+
+const clone = Object.assign(numbers, add);
+
+clone.d = 55;
+
+console.log(add);
+console.log(clone);
+
+const oldArr = ['a', 'b', 'c'];
+const newArr= oldArr.slice();
+
+console.log(newArr);
+newArr[2] = 'd';
+console.log(newArr);
+
+const video = ['youtube', 'vimeo', 'twitch'],
+    blogs = ['livejournal', 'wp', 'blogger'],
+    internet = [...video, ...blogs, 'facebook'];
+
+console.log(internet);
+
+const array = ['a', 'b'];
+
+const newArray = [...array];
+
+const q = {
+    one: 1,
+    two: 2
+};
+
+const w = {...q};
